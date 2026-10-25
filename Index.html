@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Для Эвелины</title>
+<style>
+:root{--bg:#fffaf6;--beige:#f3e6d8;--pink:#f7c6d0;--rasp:#c2185b;--text:#5a2a3a;--card:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a1a20;--beige:#3a2a2c;--pink:#7a3a4c;--rasp:#ff7aa8;--text:#fbe6ec;--card:#3b252c}}
+:root[data-theme="dark"]{--bg:#2a1a20;--beige:#3a2a2c;--pink:#7a3a4c;--rasp:#ff7aa8;--text:#fbe6ec;--card:#3b252c}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+section{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;position:relative}
+#hero{background:linear-gradient(180deg,var(--bg),var(--beige))}
+h1{font-size:clamp(2.2rem,9vw,4rem);color:var(--rasp);font-weight:normal;font-style:italic}
+.sub{margin-top:18px;font-size:clamp(1.1rem,4.5vw,1.6rem);max-width:520px;line-height:1.5}
+.hint{position:absolute;bottom:28px;color:var(--rasp);animation:b 1.8s infinite;font-size:1.8rem}
+@keyframes b{50%{transform:translateY(10px)}}
+.h{position:fixed;bottom:-30px;pointer-events:none;animation:up linear forwards;opacity:.7}
+@keyframes up{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+#card{background:linear-gradient(180deg,var(--beige),var(--pink))}
+.cap{margin-bottom:26px;font-size:1.2rem;color:var(--rasp)}
+.env{width:min(300px,80vw);height:200px;background:var(--card);border-radius:10px;position:relative;cursor:pointer;box-shadow:0 14px 34px rgba(194,24,91,.25);border:2px solid var(--pink);transition:transform .3s;animation:pulse 2.4s infinite}
+.env:active{transform:scale(.97)}
+@keyframes pulse{50%{transform:scale(1.04)}}
+.env::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom right,transparent 49.5%,var(--pink) 50%) left/50% 100% no-repeat,linear-gradient(to bottom left,transparent 49.5%,var(--pink) 50%) right/50% 100% no-repeat;border-radius:10px;opacity:.55}
+.flap{position:absolute;top:0;left:0;width:100%;height:60%;background:var(--rasp);clip-path:polygon(0 0,100% 0,50% 100%);border-radius:10px 10px 0 0;transform-origin:top;transition:transform .7s}
+.env.open .flap{transform:rotateX(180deg)}
+.seal{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);font-size:2rem;z-index:2}
+#end{background:linear-gradient(180deg,var(--pink),var(--bg))}
+#end h2{font-size:clamp(2rem,9vw,3.6rem);color:var(--rasp);font-style:italic;font-weight:normal;opacity:0;transform:scale(.8);transition:all 1s}
+#end.show h2{opacity:1;transform:none}
+#end .sub{opacity:0;transition:opacity 1.4s .5s}
+#end.show .sub{opacity:1}
+.rv{opacity:0;transform:translateY(24px);transition:all 1s}
+.rv.in{opacity:1;transform:none}
+#ov{position:fixed;inset:0;background:rgba(90,30,50,.55);display:none;align-items:center;justify-content:center;padding:18px;z-index:10;backdrop-filter:blur(3px)}
+#ov.on{display:flex}
+.paper{background:var(--card);max-width:480px;width:100%;max-height:88vh;overflow-y:auto;border-radius:14px;padding:28px 24px;border-top:6px solid var(--rasp);line-height:1.65;text-align:left;animation:pop .6s}
+@keyframes pop{from{transform:translateY(40px) scale(.9);opacity:0}}
+.paper h3{color:var(--rasp);font-style:italic;font-weight:normal;font-size:1.5rem;margin-bottom:12px}
+.paper p{margin-bottom:12px}
+.sign{text-align:right;color:var(--rasp);font-style:italic;font-size:1.15rem}
+button{margin-top:14px;width:100%;padding:14px;border:0;border-radius:30px;background:var(--rasp);color:#fff;font:inherit;font-size:1.05rem;cursor:pointer}
+</style>
+</head>
+<body>
+<section id="hero">
+<h1>Привет, Эвелина 💕</h1>
+<p class="sub">Я так сильно тебя люблю.<br>Это маленький сайт только для тебя.</p>
+<div class="hint">⌄</div>
+</section>
+
+<section id="card">
+<p class="cap rv">Для тебя есть кое-что особенное…</p>
+<div class="env rv" id="env"><div class="flap"></div><div class="seal">💌</div></div>
+<p class="cap rv" style="margin-top:22px;font-size:1rem">Нажми на открытку</p>
+</section>
+
+<section id="end">
+<h2>Люблю тебя, моя Эвоша 💗</h2>
+<p class="sub">Ты моё самое тёплое «привет» и самое любимое «спокойной ночи».</p>
+</section>
+
+<div id="ov"><div class="paper" id="paper">
+<h3>Привет, Эвелина!</h3>
+<p>Хоть мы и познакомились не так давно, но за это время ты стала мне настолько дорога. Рядом с тобой я улыбаюсь без причины и ловлю себя на том, что постоянно о тебе думаю.</p>
+<p>Ты красивая, нежная и настоящая. В твоих глазах хочется тонуть, а твой смех делает любой мой день лучше. Спасибо, что ты есть.</p>
+<p>И я приглашаю тебя на свидание в этот вторник. Я пока не знаю, что мы будем делать, но точно знаю, что будет весело, потому что рядом будешь ты. Люблю тебя.</p>
+<p class="sign">С любовью, Алмаз 💕</p>
+<button id="read">Я прочитала письмо</button>
+</div></div>
+
+<script>
+var ov=document.getElementById('ov'),env=document.getElementById('env'),end=document.getElementById('end');
+function heart(){var e=document.createElement('div');e.className='h';e.textContent=['💗','💕','🌸','💖'][Math.floor(Math.random()*4)];
+e.style.left=Math.random()*100+'vw';e.style.fontSize=(14+Math.random()*20)+'px';e.style.animationDuration=(6+Math.random()*6)+'s';
+document.body.appendChild(e);setTimeout(function(){e.remove()},12000)}
+setInterval(heart,900);
+var io=new IntersectionObserver(function(l){l.forEach(function(x){if(x.isIntersecting)x.target.classList.add('in')})},{threshold:.3});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+env.onclick=function(){env.classList.add('open');setTimeout(function(){ov.classList.add('on')},600)};
+function close(go){ov.classList.remove('on');env.classList.remove('open');if(go){end.classList.add('show');end.scrollIntoView({behavior:'smooth'});for(var i=0;i<14;i++)setTimeout(heart,i*120)}}
+document.getElementById('read').onclick=function(){close(true)};
+ov.onclick=function(e){if(e.target===ov)close(false)};
+new IntersectionObserver(function(l){if(l[0].isIntersecting)end.classList.add('show')},{threshold:.6}).observe(end);
+</script>
+</body>
+</html>
